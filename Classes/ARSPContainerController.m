@@ -93,12 +93,13 @@
             [_panelViewController.view removeFromSuperview];
         }
     }
+    self.visibilityState = ARSPVisibilityStateClosed;
     _panelViewController = slidingViewController;
     [self addChildViewController:_panelViewController];
     [self.view addSubview:_panelViewController.view];
     [self setupPanelViewControllerConstraints];
-    [self updateSlidingViewControllerFrameWithBottomOffset:_visibleZoneHeight];
-    self.visibilityState = ARSPVisibilityStateMinimized;
+    [self updateSlidingViewControllerFrameWithBottomOffset:0.0];
+    
     [self updateShadow];
     [self setDraggingEnabled:_draggingEnabled];
 }
@@ -162,7 +163,7 @@
 - (void)setVisibleZoneHeight:(CGFloat)slidingViewControllerVisiblePartHeight
 {
     _visibleZoneHeight = MIN(slidingViewControllerVisiblePartHeight, self.view.frame.size.height);
-    [self updateSlidingViewControllerFrameWithBottomOffset:_panelViewController.view.frame.origin.y];
+    //[self updateSlidingViewControllerFrameWithBottomOffset:_panelViewController.view.frame.origin.y];
 }
 
 - (void)setDropShadow:(BOOL)dropShadow
@@ -487,7 +488,7 @@
     _shadowRadius = 20.f;
     _shadowOpacity = 0.5f;
     
-    _shouldOverlapMainViewController = NO;
+    _shouldOverlapMainViewController = YES;
     _shouldShiftMainViewController = NO;
     
     _animationDuration = 0.3f;
