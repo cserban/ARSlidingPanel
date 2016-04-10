@@ -8,13 +8,13 @@ Pod::Spec.new do |s|
  ARSlidingPanel is and iOS framework that allows to use 'Google Play Music - like' sliding-up panel in your application
                    DESC
 
-  s.homepage     = "https://github.com/andriirogulin/ARSlidingPanel"
+  s.homepage     = "https://github.com/cserban/ARSlidingPanel"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
-  s.author       = { "Andrii Rogulin" => "andrii.rogulin@gmail.com" }
+  s.author       = { "Andrii Rogulin" => "serban.chiricescu@gmail.com" }
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/andriirogulin/ARSlidingPanel.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/cserban/ARSlidingPanel.git", :tag => s.version.to_s }
 
   s.source_files = 'Classes/*.{h,m}'
   s.exclude_files = "Classes/Exclude"
